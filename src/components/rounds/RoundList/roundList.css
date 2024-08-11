@@ -1,0 +1,41 @@
+.list {
+    width: 600px;
+    display: grid;
+    gap: var(--gap-1);
+}
+
+.list__header {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    align-items: center;
+    background: var(--grey-2);
+    padding: var(--gap-2);
+}
+
+.list__round {
+    cursor: pointer;
+    position: relative;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    align-items: center;
+    background: var(--grey-2);
+    padding: var(--gap-2);
+}
+
+.list__round__refresh_btn {
+    position: absolute;
+    left: var(--gap-2);
+}
+
+.list__round__field {
+    display: flex;
+    padding: var(--gap-2);
+    background: var(--grey-1);
+    overflow: hidden;
+    min-height: 220px;
+}

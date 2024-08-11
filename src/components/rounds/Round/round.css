@@ -1,0 +1,45 @@
+.field {
+    --cell-height: 55px;
+    --cell-width: 70px;
+    --cell-border: 1px;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    border-collapse: collapse;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.field__cell {
+    background: var(--grey-3);
+    border: var(--cell-border) solid var(--black-1);
+    border-collapse: collapse;
+    width: var(--cell-width);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.filed__group {
+    background: var(--grey-4);
+    border: var(--cell-border) solid var(--black-1);
+    position: relative;
+}
+
+.field__group__inner__block {
+    position: absolute;
+    height: calc(var(--cell-height) * 4);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filed__group--bottom {
+    bottom: 0;
+}
+
+.filed__group--top {
+    top: 0;
+}
