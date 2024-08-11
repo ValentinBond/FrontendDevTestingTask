@@ -18,7 +18,7 @@ export const Round = ({ id }: PropsType) => {
   const columnsWithGroup = new Map();
   const { isFetching, error, data } = useRetrieveRoundQuery({ id });
 
-  const { groups, gameField } = useRoundField({
+  const { groups, roundField } = useRoundField({
     cells: data?.items,
     height: data?.height,
   });
@@ -29,23 +29,21 @@ export const Round = ({ id }: PropsType) => {
 
   return (
     <div className="field">
-      {gameField.map((row, index) => {
-        return (
-          <Fragment key={index}>
-            {row.map((cell, idx) => {
-              if (cell !== GROUP_LENGTH) return <Cell key={idx + index} cell={cell} />;
+      {roundField.map((row, index) => (
+        <Fragment key={index}>
+          {row.map((cell, idx) => {
+            if (cell !== GROUP_LENGTH) return <Cell key={idx + index} cell={cell} />;
 
-              if (columnsWithGroup.get(idx)) return null;
+            if (columnsWithGroup.get(idx)) return null;
 
-              columnsWithGroup.set(idx, true);
+            columnsWithGroup.set(idx, true);
 
-              const { rowEnd, rowStart } = groups[idx];
+            const { rowEnd, rowStart } = groups[idx];
 
-              return <CellGroup key={idx + index} rowIndex={idx} rowEnd={rowEnd} rowStart={rowStart} cell={cell} />;
-            })}
-          </Fragment>
-        );
-      })}
+            return <CellGroup key={idx + index} rowIndex={idx} rowEnd={rowEnd} rowStart={rowStart} cell={cell} />;
+          })}
+        </Fragment>
+      ))}
     </div>
   );
 };
