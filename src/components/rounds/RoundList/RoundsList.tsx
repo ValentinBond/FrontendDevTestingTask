@@ -45,6 +45,7 @@ export const RoundsList = () => {
             <span>{dayjs(dateTime).format('M/DD/YYYY, HH:mm:ss A')}</span>
             {openRounds[roundId] ? (
               <RefreshIcon
+                className="list__round__refresh_btn"
                 onClick={(e) => {
                   e.stopPropagation();
                   refreshRound(roundId);

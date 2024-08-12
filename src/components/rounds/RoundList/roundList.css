@@ -29,7 +29,7 @@
 
 .list__round__refresh_btn {
     position: absolute;
-    left: var(--gap-2);
+    right: var(--gap-2);
 }
 
 .list__round__field {
