@@ -27,7 +27,8 @@
       "@hooks/*": ["hooks/*"],
       "@assets/*": ["assets/*"],
       "@constants/*": ["constants/*"]
-    }
+    },
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"]
 }
